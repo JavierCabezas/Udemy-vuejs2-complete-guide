@@ -7,7 +7,11 @@
                 <button class="btn btn-success" @click="selectedTemplate = 'appGreen'">Load Green Template</button>
                 <button class="btn btn-danger" @click="selectedTemplate = 'appRed'">Load Red Template</button>
                 <hr>
-                <component :is="selectedTemplate"></component>
+                <component :is="selectedTemplate">
+                    <p v-if="selectedTemplate == 'appBlue'"> Blue Content </p>
+                    <p v-if="selectedTemplate == 'appGreen'"> Green Content </p>
+                    <p v-if="selectedTemplate == 'appRed'"> Red Content </p>
+                </component>
             </div>
         </div>
     </div>
