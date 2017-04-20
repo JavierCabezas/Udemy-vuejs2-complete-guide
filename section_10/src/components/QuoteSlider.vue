@@ -1,5 +1,5 @@
 <template>
-   <div class="slider">
+   <div class="row slider">
        {{ quotes_num }} / {{ max_quotes }}
    </div>
 </template>
