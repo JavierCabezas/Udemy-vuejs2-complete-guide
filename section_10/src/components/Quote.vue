@@ -1,6 +1,6 @@
 <template>
     <div class="quote_block col-md-3 panel panel-default col-md-offset-1">
-        <p class="quote"> {{ quote }} </p>
+        <p class="quote" @click="delete_quote(index)"> {{ quote }} </p>
     </div>
 </template>
 
@@ -8,11 +8,10 @@
     import { eventBus } from '../main';
 
     export default {
-        props: ['quote'],
+        props: [ 'quote', 'index' ],
         methods: {
-            delete_quote(){
-                eventBus.$emit( 'addQuote', this.new_quote );
-                this.new_quote = '';
+            delete_quote(index){
+                eventBus.$emit( 'deleteQuote', index );
             }
         }
     }

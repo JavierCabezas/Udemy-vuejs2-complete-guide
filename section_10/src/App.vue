@@ -11,7 +11,7 @@
         </div>
 
         <div class="row">
-            <quote v-for="q in quotes" :quote="q"> </quote>
+            <quote v-for="(q, i) in quotes" :quote="q" :index="i"> </quote>
         </div>
 
     </div>
@@ -42,6 +42,9 @@
                     this.quotes.push(new_quote);
                 }
 
+            });
+            eventBus.$on('deleteQuote', (index) => {
+                this.quotes.splice(index, 1);
             });
         },
         components:{

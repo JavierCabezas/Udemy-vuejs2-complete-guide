@@ -1,7 +1,7 @@
 <template>
-    <div class="row">
+    <div class="row form-group">
         <textarea v-model="new_quote" class="form-control"> </textarea> <br>
-        <button @click="add_quote()" class="btn btn-primary center-block"> Add quote </button>
+        <button @click.prevent="add_quote()" class="btn btn-primary center-block"> Add quote </button>
         <br><br>
     </div>
 </template>
@@ -17,7 +17,7 @@
             }
         },
         methods: {
-            add_quote(){
+            add_quote() {
                 eventBus.$emit( 'addQuote', this.new_quote );
                 this.new_quote = '';
             }
