@@ -2,6 +2,7 @@
     <div class="row">
         <textarea v-model="new_quote" class="form-control"> </textarea> <br>
         <button @click="add_quote()" class="btn btn-primary center-block"> Add quote </button>
+        <br><br>
     </div>
 </template>
 

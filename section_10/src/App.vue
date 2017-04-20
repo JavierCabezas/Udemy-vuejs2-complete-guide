@@ -1,8 +1,19 @@
 <template>
     <div class="container">
-        <quote-slider :quotes_num="quotes.length" :max_quotes="maxQuotes"> </quote-slider>
-        <form-quote> </form-quote>
-        <quote v-for="q in quotes" :quote="q"> </quote>
+
+        <h1> Quotes </h1>
+        <div class="row">
+            <quote-slider :quotes_num="quotes.length" :max_quotes="maxQuotes"> </quote-slider>
+        </div>
+
+        <div class="row">
+            <form-quote> </form-quote>
+        </div>
+
+        <div class="row">
+            <quote v-for="q in quotes" :quote="q"> </quote>
+        </div>
+
     </div>
 </template>
 
