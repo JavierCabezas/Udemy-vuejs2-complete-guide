@@ -18,6 +18,7 @@
         methods: {
             add_quote(){
                 eventBus.$emit( 'addQuote', this.new_quote );
+                this.new_quote = '';
             }
         }
     }

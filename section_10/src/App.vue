@@ -25,7 +25,12 @@
         },
         created(){
             eventBus.$on('addQuote', (new_quote) => {
-                this.quotes.push(new_quote);
+                if(this.quotes.length  >= this.maxQuotes){
+                    alert("Quote limit reached. Delete some quotes");
+                }else{
+                    this.quotes.push(new_quote);
+                }
+
             });
         },
         components:{
