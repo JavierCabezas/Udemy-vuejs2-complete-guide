@@ -33,21 +33,21 @@
                                 <label><input type="checkbox" v-model="input_store_in_database"> Store in database? </label>
                             </div>
                         </div>
+
+                        <!-- Exercise 2 -->
+                        <!-- Only display the Form if it has NOT been submitted -->
+                        <!-- Display the Data Summary ONCE the Form HAS been submitted -->
+                        <div class="form-group">
+                            <button @click.prevent="submit" class="btn btn-primary center-block">
+                                <span class="glyphyicon glyphicon-floppy"> </span>Guardar
+                            </button>
+                        </div>
                     </div>
-
-
-                    <!-- Exercise 2 -->
-                    <!-- Only display the Form if it has NOT been submitted -->
-                    <!-- Display the Data Summary ONCE the Form HAS been submitted -->
-
-                    <!-- Exercise 3 -->
-                    <!-- Edit the Example from above and create a custom "Full Name" Control -->
-                    <!-- which still holds the First Name and Last Name Input Field -->
                 </div>
             </div>
         </form>
         <hr>
-        <div class="row">
+        <div class="row" v-if="is_submited">
             <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -72,7 +72,13 @@
                 input_full_name: '',
                 input_email: '',
                 input_password: '',
-                input_store_in_database: true
+                input_store_in_database: true,
+                is_submited: false
+            }
+        },
+        methods: {
+            submit: function(){
+                this.is_submited = true;
             }
         },
         components:{
