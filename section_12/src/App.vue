@@ -6,13 +6,29 @@
                 <!-- Exercise -->
                 <!-- Build a Custom Directive which works like v-on (Listen for Events) -->
 
+                <button v-custom-on:click="clicked">
+                    Sample text
+                </button>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-    export default {}
+    export default {
+        directives: {
+            'custom-on': {
+                bind(el, binding, vnode){
+                    el.addEventListener(binding.arg, binding.value);
+                }
+            }
+        },
+        methods: {
+            clicked(){
+                console.log('I was clicked');
+            }
+        }
+    }
 </script>
 
 <style>
