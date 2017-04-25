@@ -20,14 +20,17 @@
                 <!-- Exercise 4 -->
                 <!-- Share the Computed Property rebuilding Exercise 2 via a Mixin -->
 
-                
+
             </div>
         </div>
     </div>
 </template>
 
 <script>
+    import  {lenghtMixin} from './lenghtMixin';
+
     export default {
+        mixins: ['lenghtMixin'],
         data: function (){
             return {
                 reverseMe: 'reverse',
@@ -42,9 +45,6 @@
         computed: {
             reversed() {
                 return this.reverseMe.split("").reverse().join("");
-            },
-            counted() {
-                return this.countMe + ' (' + this.countMe + ')';
             }
         }
     }
